@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги кибербезопасности</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">root@hacker_servs:~#</div>
+            <button class="header__menu-btn" aria-label="Открыть меню">[=]</button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Главная</a></li>
+                    <li><a href="services.html" class="nav__link nav__link_active">Услуги</a></li>
+                    <li><a href="registration.html" class="nav__link">Регистрация</a></li>
+                    <li><a href="account.html" class="nav__link">Кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="services-section">
+            <h1 class="services-section__title">Комплекс услуг по защите</h1>
+            
+            <div class="services-list">
+                <article class="service-card">
+                    <div class="service-card__icon-wrapper">
+                        <img src="img/icon-web.jpg" alt="Web-безопасность" class="service-card__icon">
+                    </div>
+                    <h3 class="service-card__title">Аудит веб-приложений</h3>
+                    <p class="service-card__description">Глубокий анализ безопасности сайтов, интернет-магазинов и личных кабинетов. Поиск уязвимостей (OWASP Top 10, SQLi, XSS, CSRF).</p>
+                    <a href="#" class="service-card__link">Подробнее</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon-wrapper">
+                        <img src="img/icon-infra.svg" alt="Инфраструктура" class="service-card__icon">
+                    </div>
+                    <h3 class="service-card__title">Тестирование на проникновение</h3>
+                    <p class="service-card__description">Имитация реальной кибератаки (тест на проникновение) на внутреннюю и внешнюю инфраструктуру вашей организации для оценки периметра.</p>
+                    <a href="#" class="service-card__link">Подробнее</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon-wrapper">
+                        <img src="img/icon-social.svg" alt="Социальная инженерия" class="service-card__icon">
+                    </div>
+                    <h3 class="service-card__title">Социальная инженерия</h3>
+                    <p class="service-card__description">Эмуляция фишинговых рассылок и проверка готовности персонала противостоять манипуляциям и целевым атакам злоумышленников.</p>
+                    <a href="#" class="service-card__link">Подробнее</a>
+                </article>
+
+                <article class="service-card service-card_hidden">
+                    <div class="service-card__icon-wrapper">
+                        <img src="img/icon-code.svg" alt="Аудит кода" class="service-card__icon">
+                    </div>
+                    <h3 class="service-card__title">Аудит исходного кода</h3>
+                    <p class="service-card__description">Анализ исходного кода программного обеспечения методами SAST/DAST для выявления скрытых бэкдоров, уязвимостей и ошибок проектирования.</p>
+                    <a href="#" class="service-card__link">Подробнее</a>
+                </article>
+
+                <article class="service-card service-card_hidden">
+                    <div class="service-card__icon-wrapper">
+                        <img src="img/icon-ddos.svg" alt="Защита от DDoS" class="service-card__icon">
+                    </div>
+                    <h3 class="service-card__title">Защита от DDoS</h3>
+                    <p class="service-card__description">Развертывание и конфигурирование эшелонированных систем фильтрации трафика для обеспечения доступности сервисов под экстремальными нагрузками.</p>
+                    <a href="#" class="service-card__link">Подробнее</a>
+                </article>
+
+                <article class="service-card service-card_hidden">
+                    <div class="service-card__icon-wrapper">
+                        <img src="img/icon-incident.svg" alt="Расследование" class="service-card__icon">
+                    </div>
+                    <h3 class="service-card__title">Расследование инцидентов</h3>
+                    <p class="service-card__description">Компьютерная криминалистика (форензика) после факта взлома. Сбор цифровых улик, локализация утечки и составление плана восстановления.</p>
+                    <a href="#" class="service-card__link">Подробнее</a>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination__button">Показать еще</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__copy">&copy; 2026 PORTFOLIO. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</div>
+            <div class="footer__socials">
+                <a href="#" class="footer__link">GitHub</a>
+                <a href="#" class="footer__link">Discord</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+:root {
+    --bg-color: #0d0e11;
+    --panel-color: #16181d;
+    --border-color: #262930;
+    --text-main: #e2e4e9;
+    --text-muted: #989eaa;
+    --accent-color: #00ff66;
+    --accent-dim: #00993d;
+    --error-color: #ff3333;
+    --font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, checkbox {
+    font-family: inherit;
+}
+
+/* ШАПКА (HEADER) */
+.header {
+    background-color: var(--panel-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.header__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav__link {
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav__link:hover, .nav__link_active {
+    color: var(--accent-color);
+}
+
+/* ПОДВАЛ (FOOTER) */
+.footer {
+    background-color: var(--panel-color);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer__copy {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__link {
+    font-size: 0.9rem;
+    border-bottom: 1px dashed var(--text-muted);
+}
+
+.footer__link:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* СТРАНИЦА: INDEX.HTML (ГЛАВНАЯ) */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Промо-блок */
+.promo {
+    padding: 80px 0;
+    position: relative;
+}
+
+.promo__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.promo__content {
+    flex: 1;
+}
+
+.promo__title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    min-height: 365px; /* Резервируем высоту на десктопах */
+}
+
+.promo__subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+.promo__button {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.promo__button_accent:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.promo__image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.promo__image {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    filter: grayscale(100%) contrast(120%);
+}
+
+.promo__pattern {
+    position: absolute;
+    color: #1a231e;
+    font-size: 12px;
+    user-select: none;
+    z-index: -1;
+    right: 0;
+    top: 10%;
+}
+
+/* Блок Обо мне */
+.about {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.about__container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about__info {
+    flex: 2;
+}
+
+.about__info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.about__info p {
+    margin-bottom: 15px;
+}
+
+.about__cert-img {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    filter: grayscale(100%);
+}
+
+/* Блок Преимущества */
+.advantages {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.advantages__title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.advantages__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.advantage-card {
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+}
+
+.advantage-card__title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.advantage-card__description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* СТРАНИЦА: SERVICES.HTML */
+.services-section {
+    padding: 40px 0;
+}
+
+.services-section__title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card_hidden {
+    display: none !important;
+}
+
+.service-card__icon-wrapper {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.service-card__icon {
+    height: 500%;
+    width: 100%;    
+}
+
+.service-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.service-card__description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.service-card__link {
+    display: inline-block;
+    align-self: flex-start;
+    border-bottom: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    padding-bottom: 2px;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination__button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.pagination__button:hover {
+    border-color: var(--accent-color);
+}
+
+/* СТРАНИЦА: REGISTRATION.HTML */
+.auth-section {
+    max-width: 450px;
+    margin: 80px auto;
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+}
+
+.auth-section__title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.form__input {
+    width: 100%;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px;
+    font-size: 0.95rem;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.form__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.form__checkbox {
+    margin-top: 3px;
+}
+
+.form__submit-btn {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.form__submit-btn:hover {
+    background-color: var(--accent-dim);
+}
+
+.form__error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.auth-section__footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.auth-section__link {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* СТРАНИЦА: ACCOUNT.HTML */
+.account-section {
+    padding: 40px 0;
+}
+
+.account-section__welcome {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.profile-card {
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-card__avatar-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card__avatar {
+    width: 60%;
+    height: auto;
+    filter: opacity(0.5);
+}
+
+.profile-card__info {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.profile-card__info p {
+    margin-bottom: 8px;
+}
+
+.profile-card__logout-btn {
+    background: none;
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 8px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.profile-card__logout-btn:hover {
+    background-color: rgba(255, 51, 51, 0.1);
+}
+
+.audits-panel {
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+}
+
+.audits-panel__title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.audits-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.audits-table th, .audits-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.audits-table th {
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+}
+
+.status-badge_success {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.status-badge_process {
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+/* СТРАНИЦА: 404.HTML */
+.terminal-error {
+    max-width: 650px;
+    margin: 100px auto;
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-family);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.terminal-error__header {
+    background-color: #1c1f26;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-error__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+}
+
+.terminal-error__dot_red { background-color: var(--error-color); }
+
+.terminal-error__body {
+    padding: 30px;
+}
+
+.terminal-error__code {
+    color: var(--error-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.terminal-error__text {
+    margin-bottom: 30px;
+}
+
+.terminal-error__link {
+    display: inline-block;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 10px 20px;
+}
+
+.terminal-error__link:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* АНИМАЦИИ ДЛЯ JAVASCRIPT */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element_visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   3. ТРЕБОВАНИЯ К АДАПТИВНОСТИ (Адаптивные брейкпоинты)
+   ========================================================================== */
+
+/* Планшетная версия (1024px) */
+@media (max-width: 1024px) {
+    .advantages__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Мобильная версия (768px и ниже) */
+@media (max-width: 768px) {
+    /* 1. Сетки: перевод карточек из горизонтального ряда в вертикальный список */
+    .advantages__grid, .services-list, .account-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .promo__container, .about__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promo__image-wrapper {
+        order: -1; /* Картинка на мобильном встанет над текстом */
+    }
+
+    .service-card {
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-card__link {
+        align-self: center;
+    }
+
+    /* 2. Меню: Появление бургера и скрытие навигации */
+    .header__menu-btn {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--panel-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+    }
+
+    .nav_open {
+        display: block;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* 3. Типографика: Уменьшение размеров заголовков и кнопок */
+    .promo__title {
+        font-size: 1.6rem;
+        min-height: 250px; /* Резервируем высоту под увеличившийся объем текста на мобильных */
+    }
+    
+    .promo__subtitle {
+        font-size: 0.95rem;
+    }
+
+    .about__info h2, .advantages__title, .services-section__title, .account-section__welcome {
+        font-size: 1.4rem;
+    }
+
+    .promo__button, .form__submit-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    /* 4. Элементы: Скрытие декоративных точечных паттернов */
+    .promo__pattern {
+        display: none !important;
+    }
+    
+    .about__cert-img {
+        max-width: 250px;
+    }
+}
