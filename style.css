@@ -297,13 +297,19 @@ button, input, checkbox {
 }
 
 .service-card__icon-wrapper {
-    margin-bottom: 20px;
-    height: 50px;
+    margin: -30px -30px 20px -30px; /* Сдвигаем картинку в края карточки (нейтрализуем padding: 30px у .service-card) */
+    height: 160px;                 /* Фиксированная высота для зоны картинки */
+    overflow: hidden;              /* Скрываем всё, что выходит за рамки */
+    border-bottom: 1px solid var(--border-color); /* Отделяем картинку от текста красивой хакерской линией */
 }
 
 .service-card__icon {
-    height: 500%;
-    width: 100%;    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* Картинка идеально заполняет блок без искажения пропорций */
+    object-position: center;       /* Центрируем изображение */
+    filter: grayscale(40%) contrast(110%); /* Сохраняем вашу стилистику */
+    display: block;
 }
 
 .service-card__title {
