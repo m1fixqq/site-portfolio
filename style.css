@@ -476,7 +476,6 @@ button, input, checkbox {
 .profile-card__avatar {
     width: 60%;
     height: auto;
-    filter: opacity(0.5);
 }
 
 .profile-card__info {
